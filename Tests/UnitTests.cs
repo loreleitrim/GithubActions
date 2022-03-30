@@ -31,5 +31,26 @@ namespace GithubActionsLab
         }
 
         // Implement 3 tests per operation, following a similar pattern as above
+
+        public void Subtract_Valid()
+        {
+            Assert.AreEqual("1", Program.Subtract("3", "2"));
+            Assert.AreEqual("15", Program.Subtract("30", "15"));
+            Assert.AreEqual("4", Program.Subtract("7", "3"));
+        }
+
+        public void Subtract_Invalid()
+        {
+            Assert.Throws<FormatException>(() => Program.Subtract("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Subtract("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Subtract("a", "a"));
+        }
+
+        public void Subtract_Null()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, null));
+        }
     }
 }
