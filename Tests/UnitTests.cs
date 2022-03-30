@@ -108,7 +108,7 @@ namespace GithubActionsLab
         [Test]
         public void Power_ValidTrimberger()
         {
-            Assert.AreEqual(9, Program.Power("3", "2"));
+            Assert.AreEqual(8, Program.Power("3", "2"));
             Assert.AreEqual(16, Program.Power("2", "4"));
             Assert.AreEqual(125, Program.Power("5", "3"));
         }
