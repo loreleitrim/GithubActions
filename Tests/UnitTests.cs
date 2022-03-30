@@ -32,25 +32,101 @@ namespace GithubActionsLab
 
         // Implement 3 tests per operation, following a similar pattern as above
 
-        public void Subtract_Valid()
+        [Test]
+        public void Subtract_ValidTrimberger()
         {
-            Assert.AreEqual("1", Program.Subtract("3", "2"));
-            Assert.AreEqual("15", Program.Subtract("30", "15"));
-            Assert.AreEqual("4", Program.Subtract("7", "3"));
+            Assert.AreEqual(1, Program.Subtract("3", "2"));
+            Assert.AreEqual(15, Program.Subtract("30", "15"));
+            Assert.AreEqual(4, Program.Subtract("7", "3"));
         }
 
-        public void Subtract_Invalid()
+        [Test]
+        public void Subtract_InvalidTrimberger()
         {
             Assert.Throws<FormatException>(() => Program.Subtract("1", "a"));
             Assert.Throws<FormatException>(() => Program.Subtract("a", "1"));
             Assert.Throws<FormatException>(() => Program.Subtract("a", "a"));
         }
 
-        public void Subtract_Null()
+        [Test]
+        public void Subtract_NullTrimberger()
         {
             Assert.Throws<ArgumentNullException>(() => Program.Subtract("1", null));
             Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, "1"));
             Assert.Throws<ArgumentNullException>(() => Program.Subtract(null, null));
+        }
+
+        [Test]
+        public void Multiply_ValidTrimberger()
+        {
+            Assert.AreEqual(6, Program.Multiply("3", "2"));
+            Assert.AreEqual(450, Program.Multiply("30", "15"));
+            Assert.AreEqual(21, Program.Multiply("7", "3"));
+        }
+
+        [Test]
+        public void Mulitply_InvalidTrimberger()
+        {
+            Assert.Throws<FormatException>(() => Program.Multiply("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Multiply("a", "a"));
+        }
+
+        [Test]
+        public void Multiply_NullTrimberger()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Multiply(null, null));
+        }
+
+
+        [Test]
+        public void Divide_ValidTrimberger()
+        {
+            Assert.AreEqual(6, Program.Divide("12", "2"));
+            Assert.AreEqual(30, Program.Divide("450", "15"));
+            Assert.AreEqual(7, Program.Divide("21", "3"));
+        }
+
+        [Test]
+        public void Divide_InvalidTrimberger()
+        {
+            Assert.Throws<FormatException>(() => Program.Divide("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Divide("a", "a"));
+        }
+
+        [Test]
+        public void Divide_NullTrimberger()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Divide("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Divide(null, null));
+        }
+
+        [Test]
+        public void Power_ValidTrimberger()
+        {
+            Assert.AreEqual(9, Program.Power("3", "2"));
+            Assert.AreEqual(16, Program.Power("2", "4"));
+            Assert.AreEqual(125, Program.Power("5", "3"));
+        }
+        
+        [Test]
+        public void Power_InvalidTrimberger()
+        {
+            Assert.Throws<FormatException>(() => Program.Power("1", "a"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "1"));
+            Assert.Throws<FormatException>(() => Program.Power("a", "a"));
+        }
+
+        [Test]
+        public void Power_NullTrimberger()
+        {
+            Assert.Throws<ArgumentNullException>(() => Program.Power("1", null));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, "1"));
+            Assert.Throws<ArgumentNullException>(() => Program.Power(null, null));
         }
     }
 }
